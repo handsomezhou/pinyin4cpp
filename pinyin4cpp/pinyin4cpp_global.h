@@ -1,0 +1,12 @@
+#ifndef PINYIN4CPP_GLOBAL_H
+#define PINYIN4CPP_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(PINYIN4CPP_LIBRARY)
+#  define PINYIN4CPPSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define PINYIN4CPPSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // PINYIN4CPP_GLOBAL_H
