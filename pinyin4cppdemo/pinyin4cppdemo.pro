@@ -12,6 +12,8 @@ TARGET = pinyin4cppdemo
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    PinyinParseWidget.cpp
 
-HEADERS  +=
+HEADERS  += \
+    PinyinParseWidget.h

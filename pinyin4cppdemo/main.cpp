@@ -1,17 +1,14 @@
-#include<QTextEdit>
-#include<QHBoxLayout>
-#include<QVBoxLayout>
-#include<QLabel>
-#include<QPushButton>
-#include<QWidget>
-
 #include <QApplication>
+#include "PinyinParseWidget.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    PinyinParseWidget *pinyinParseWidget=new PinyinParseWidget;
+    pinyinParseWidget->show();
     //start:init view
+    /*
     QWidget *pMainWidget=new QWidget;
 
     QVBoxLayout *pMainlayout=new QVBoxLayout;
@@ -29,6 +26,7 @@ int main(int argc, char *argv[])
 
     pMainWidget->setLayout(pMainlayout);
     pMainWidget->show();
+    */
     //end:init view
 
     return a.exec();
