@@ -12,7 +12,7 @@ class PinyinParseWidget:public QDialog
 public:
     PinyinParseWidget(QWidget *parent=0);
 private slots:
-    void pinyinParse(const QString &text);
+    void pinyinParse();
 private:
     QLabel *inputPromptLabel;
     QTextEdit *inputStringEt;

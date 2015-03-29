@@ -8,7 +8,7 @@ PinyinParseWidget:: PinyinParseWidget(QWidget *parent):QDialog(parent)
     inputStringEt=new QTextEdit;
     converBtn=new QPushButton(tr("Convert to Pinyin"));
 
-    connect(inputStringEt,SIGNAL(textChanged(const QString &)),this,SLOT(pinyinParse(const QString &)));
+    connect(inputStringEt,SIGNAL(textChanged()),this,SLOT(pinyinParse()));
 
     QHBoxLayout *inputLayout=new QHBoxLayout;
     inputLayout->addWidget(inputPromptLabel);
@@ -22,8 +22,10 @@ PinyinParseWidget:: PinyinParseWidget(QWidget *parent):QDialog(parent)
 }
 
 
-void PinyinParseWidget::pinyinParse(const QString &text)
+void PinyinParseWidget::pinyinParse()
 {
-    converBtn->setText(text);
-    inputPromptLabel->setText("test");
+    QString inputString=inputStringEt->toPlainText();
+    if(!inputString.isEmpty()){
+        converBtn->setText(inputString.at(0));
+    }
 }
