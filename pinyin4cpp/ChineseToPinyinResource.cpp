@@ -15,7 +15,7 @@
  */
 
 #include "ChineseToPinyinResource.h"
-#include <ResourceHelper.h>
+#include "ResourceHelper.h"
 
 ChineseToPinyinResource* ChineseToPinyinResource::instance=NULL;
 

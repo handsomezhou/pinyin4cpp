@@ -1,5 +1,6 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include "../pinyin4cpp/PinyinHelper.h"
 
 #include "PinyinParseWidget.h"
 PinyinParseWidget:: PinyinParseWidget(QWidget *parent):QDialog(parent)
@@ -28,4 +29,6 @@ void PinyinParseWidget::pinyinParse()
     if(!inputString.isEmpty()){
         converBtn->setText(inputString.at(0));
     }
+
+    //PinyinHelper::toHanyuPinyinStringArray(inputString.at(0));
 }
