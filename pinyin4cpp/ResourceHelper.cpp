@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-#ifndef PINYIN4CPP_H
-#define PINYIN4CPP_H
+#include "ResourceHelper.h"
 
-#include "pinyin4cpp_global.h"
-
-class PINYIN4CPPSHARED_EXPORT Pinyin4cpp
+QHashIterator<QString, QString> ResourceHelper::loadProperties(QString resourcePath)
 {
+    QHash<QString, QString> *hash=new  QHash<QString, QString>();
+    QHashIterator<QString, QString> hashIterator(*hash);//=new QHashIterator<QString, QString>();
 
-public:
-    Pinyin4cpp();
-};
+    if((NULL==resourcePath)||(resourcePath.trimmed().isEmpty())){ /* nothing but whitespace */;
+        return hashIterator;
+    }
 
-#endif // PINYIN4CPP_H
+    QFile file(resourcePath);
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        return hashIterator;
+    }
+
+    qDebug(" File:%s, Line:%d, Function:%s", __FILE__, __LINE__ , __FUNCTION__);
+
+    return hashIterator;
+}

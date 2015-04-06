@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-#ifndef PINYIN4CPP_H
-#define PINYIN4CPP_H
+#ifndef PINYINHELPER_H
+#define PINYINHELPER_H
+#include <QChar>
+#include <QList>
+#include "HanyuPinyinOutputFormat.h"
 
-#include "pinyin4cpp_global.h"
-
-class PINYIN4CPPSHARED_EXPORT Pinyin4cpp
-{
-
+class PinyinHelper{
 public:
-    Pinyin4cpp();
+    static void toHanyuPinyinStringArray(QChar ch, HanyuPinyinOutputFormat *outputFormat, QList<QString> *pinyinList);
+private:
+    PinyinHelper();
+    static void getFormattedHanyuPinyinStringArray(QChar ch, HanyuPinyinOutputFormat *outputFormat, QList<QString> *pinyinList);
+    static void getUnformattedHanyuPinyinStringArray(QChar ch, QList<QString> *pinyinList);
+
 };
 
-#endif // PINYIN4CPP_H
+#endif // PINYINHELPER_H

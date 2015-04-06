@@ -15,14 +15,20 @@ SOURCES += pinyin4cpp.cpp \
     HanyuPinyinOutputFormat.cpp \
     HanyuPinyinVCharType.cpp \
     HanyuPinyinCaseType.cpp \
-    HanyuPinyinToneType.cpp
+    HanyuPinyinToneType.cpp \
+    PinyinHelper.cpp \
+    ChineseToPinyinResource.cpp \
+    ResourceHelper.cpp
 
 HEADERS += pinyin4cpp.h\
         pinyin4cpp_global.h \
     HanyuPinyinOutputFormat.h \
     HanyuPinyinVCharType.h \
     HanyuPinyinCaseType.h \
-    HanyuPinyinToneType.h
+    HanyuPinyinToneType.h \
+    PinyinHelper.h \
+    ChineseToPinyinResource.h \
+    ResourceHelper.h
 
 unix {
     target.path = /usr/lib

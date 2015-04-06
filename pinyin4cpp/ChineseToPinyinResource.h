@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-#ifndef PINYIN4CPP_H
-#define PINYIN4CPP_H
+#ifndef CHINESETOPINYINRESOURCE_H
+#define CHINESETOPINYINRESOURCE_H
+#include <QChar>
+#include <QString> //NULL
 
-#include "pinyin4cpp_global.h"
+static QString TEXT_FILE_RESOURCE_PATH = "/res/text_file/unicode_to_hanyu_pinyin.txt";
 
-class PINYIN4CPPSHARED_EXPORT Pinyin4cpp
-{
-
+class ChineseToPinyinResource{
 public:
-    Pinyin4cpp();
+    ~ChineseToPinyinResource();
+    static ChineseToPinyinResource* getInstance();
+    void getHanyuPinyinStringArray(QChar ch, QList<QString> *pinyinList);
+private:
+    static ChineseToPinyinResource *instance;
+    ChineseToPinyinResource();
+    void initializeResource();
+
 };
 
-#endif // PINYIN4CPP_H
+#endif // CHINESETOPINYINRESOURCE_H

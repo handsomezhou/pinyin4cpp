@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-#ifndef PINYIN4CPP_H
-#define PINYIN4CPP_H
+#ifndef RESOURCEHELPER_H
+#define RESOURCEHELPER_H
+#include <QString>
+#include <QHashIterator>
+#include <QFile>
 
-#include "pinyin4cpp_global.h"
-
-class PINYIN4CPPSHARED_EXPORT Pinyin4cpp
-{
-
+class ResourceHelper{
 public:
-    Pinyin4cpp();
+    static QHashIterator<QString, QString> loadProperties(QString resourcePath);
+private:
 };
 
-#endif // PINYIN4CPP_H
+#endif // RESOURCEHELPER_H
