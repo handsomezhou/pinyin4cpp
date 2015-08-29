@@ -28,6 +28,11 @@ void PinyinParseWidget::pinyinParse()
     QString inputString=inputStringEt->toPlainText();
     if(!inputString.isEmpty()){
         converBtn->setText(inputString.at(0));
+        QChar ch='周';
+        HanyuPinyinOutputFormat *outputFormat=new HanyuPinyinOutputFormat();
+        QList<QString> *pinyinList=new QList<QString>();
+        //PinyinHelper::toHanyuPinyinStringArray(ch,outputFormat,pinyinList);
+        PinyinHelper::toHanyuPinyinStringArray(ch,outputFormat,pinyinList);
     }
 
     //PinyinHelper::toHanyuPinyinStringArray(inputString.at(0));

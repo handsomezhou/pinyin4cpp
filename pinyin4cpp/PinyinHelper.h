@@ -19,8 +19,9 @@
 #include <QChar>
 #include <QList>
 #include "HanyuPinyinOutputFormat.h"
+#include "pinyin4cpp_global.h"
 
-class PinyinHelper{
+class PINYIN4CPPSHARED_EXPORT PinyinHelper{
 public:
     static void toHanyuPinyinStringArray(QChar ch, HanyuPinyinOutputFormat *outputFormat, QList<QString> *pinyinList);
 private:

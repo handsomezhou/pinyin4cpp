@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#include <QTextStream>
 #include "ResourceHelper.h"
 
 QHashIterator<QString, QString> ResourceHelper::loadProperties(QString resourcePath)
@@ -25,9 +26,18 @@ QHashIterator<QString, QString> ResourceHelper::loadProperties(QString resourceP
         return hashIterator;
     }
 
-    QFile file(resourcePath);
-    if(!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+    QFile *pFile=new QFile(resourcePath);
+    qDebug(" File:%s, Line:%d, Function:%s,resourcePath[%s]", __FILE__, __LINE__ , __FUNCTION__,qPrintable(resourcePath));
+    if(!pFile->open(QIODevice::ReadOnly | QIODevice::Text)){
+        qDebug(" File:%s, Line:%d, Function:%s", __FILE__, __LINE__ , __FUNCTION__);
         return hashIterator;
+    }
+
+    QTextStream in(pFile);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        // process_line(line);
+        qDebug(" line:%s",qPrintable(line));
     }
 
     qDebug(" File:%s, Line:%d, Function:%s", __FILE__, __LINE__ , __FUNCTION__);

@@ -19,8 +19,9 @@
 #include "HanyuPinyinVCharType.h"
 #include "HanyuPinyinCaseType.h"
 #include "HanyuPinyinToneType.h"
+#include "pinyin4cpp_global.h"
 
-class HanyuPinyinOutputFormat{
+class PINYIN4CPPSHARED_EXPORT HanyuPinyinOutputFormat{
 public:
     HanyuPinyinOutputFormat();
     void restoreDefault();
