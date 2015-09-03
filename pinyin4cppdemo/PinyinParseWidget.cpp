@@ -1,5 +1,6 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QDebug>
 #include "../pinyin4cpp/PinyinHelper.h"
 
 #include "PinyinParseWidget.h"
@@ -28,7 +29,9 @@ void PinyinParseWidget::pinyinParse()
     QString inputString=inputStringEt->toPlainText();
     if(!inputString.isEmpty()){
         converBtn->setText(inputString.at(0));
-        QChar ch='周';
+        QChar ch=inputString.at(0);
+
+        qDebug()<<"["<<ch.unicode()<<"]";
         HanyuPinyinOutputFormat *outputFormat=new HanyuPinyinOutputFormat();
         QList<QString> *pinyinList=new QList<QString>();
         //PinyinHelper::toHanyuPinyinStringArray(ch,outputFormat,pinyinList);

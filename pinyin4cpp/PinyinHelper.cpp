@@ -58,6 +58,13 @@ void PinyinHelper::toHanyuPinyinStringArray(QChar ch, HanyuPinyinOutputFormat *o
     PinyinHelper::getFormattedHanyuPinyinStringArray(ch,outputFormat,pinyinList);
 }
 
+/**
+ * @brief PinyinHelper::getFormattedHanyuPinyinStringArray
+ * @param ch            the given Chinese character
+ * @param outputFormat  the given hanyu pinyin output format
+ * @param pinyinList    a String list contains all Hanyu Pinyin presentations with tone
+ *         numbers; return list size equal zero for non-Chinese character
+ */
 void  PinyinHelper::getFormattedHanyuPinyinStringArray(QChar ch, HanyuPinyinOutputFormat *outputFormat, QList<QString> *pinyinList)
 {
     if((NULL==outputFormat)||(NULL==pinyinList)){

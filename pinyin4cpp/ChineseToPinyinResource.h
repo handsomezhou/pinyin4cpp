@@ -18,19 +18,26 @@
 #define CHINESETOPINYINRESOURCE_H
 #include <QChar>
 #include <QString> //NULL
+#include <QHashIterator>
 
-static QString TEXT_FILE_RESOURCE_PATH = "/res/text_file/unicode_to_hanyu_pinyin.txt";
+static QString TEXT_FILE_RESOURCE_PATH = ":/pinyin4cpp/res/text_file/unicode_to_hanyu_pinyin.txt";
+static QString LEFT_BRACKET="(";
+static QString RIGHT_BRACKET=")";
+static QString COMMA=",";
 
 class ChineseToPinyinResource{
 public:
     ~ChineseToPinyinResource();
     static ChineseToPinyinResource* getInstance();
     void getHanyuPinyinStringArray(QChar ch, QList<QString> *pinyinList);
+    void freeResource();
 private:
     static ChineseToPinyinResource *instance;
+    QHash<QString, QString> *hanyuPinyinHash;
     ChineseToPinyinResource();
     void initializeResource();
-
+    QString getHanyuPinyinRecordFromChar(QChar ch);
+    bool isValidRecord(QString record);
 };
 
 #endif // CHINESETOPINYINRESOURCE_H

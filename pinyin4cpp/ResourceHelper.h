@@ -22,7 +22,7 @@
 
 class ResourceHelper{
 public:
-    static QHashIterator<QString, QString> loadProperties(QString resourcePath);
+    static QHash<QString, QString> *loadProperties(QString resourcePath);
 private:
 };
 

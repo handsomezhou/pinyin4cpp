@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="res/text_file">
+    <qresource prefix="pinyin4cpp">
         <file>res/text_file/unicode_to_hanyu_pinyin.txt</file>
     </qresource>
 </RCC>

@@ -15,32 +15,36 @@
  */
 
 #include <QTextStream>
+#include <QStringList>
+#include <QDebug>
 #include "ResourceHelper.h"
 
-QHashIterator<QString, QString> ResourceHelper::loadProperties(QString resourcePath)
+QHash<QString, QString> *ResourceHelper::loadProperties(QString resourcePath)
 {
     QHash<QString, QString> *hash=new  QHash<QString, QString>();
-    QHashIterator<QString, QString> hashIterator(*hash);//=new QHashIterator<QString, QString>();
-
     if((NULL==resourcePath)||(resourcePath.trimmed().isEmpty())){ /* nothing but whitespace */;
-        return hashIterator;
+        return hash;
     }
 
     QFile *pFile=new QFile(resourcePath);
-    qDebug(" File:%s, Line:%d, Function:%s,resourcePath[%s]", __FILE__, __LINE__ , __FUNCTION__,qPrintable(resourcePath));
+    //qDebug(" File:%s, Line:%d, Function:%s,resourcePath[%s]", __FILE__, __LINE__ , __FUNCTION__,qPrintable(resourcePath));
     if(!pFile->open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug(" File:%s, Line:%d, Function:%s", __FILE__, __LINE__ , __FUNCTION__);
-        return hashIterator;
+        qDebug(" File:%s, Line:%d, Function:%s, open file failed", __FILE__, __LINE__ , __FUNCTION__);
+        return hash;
     }
 
     QTextStream in(pFile);
     while (!in.atEnd()) {
         QString line = in.readLine();
-        // process_line(line);
-        qDebug(" line:%s",qPrintable(line));
+
+        QStringList stringList=line.split(QChar::Space);
+        hash->insert( stringList.at(0), stringList.at(1));
+
+        // qDebug(" line:%s key[%s]-value[%s]",qPrintable(line),qPrintable(stringList.at(0)),qPrintable(stringList.at(1)));
     }
 
-    qDebug(" File:%s, Line:%d, Function:%s", __FILE__, __LINE__ , __FUNCTION__);
+    qDebug(" File:%s, Line:%d, Function:%s  hash->size()[%d]", __FILE__, __LINE__ , __FUNCTION__, hash->size());
 
-    return hashIterator;
+
+    return hash;
 }
