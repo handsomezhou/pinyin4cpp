@@ -16,6 +16,9 @@
 
 #include "HanyuPinyinCaseType.h"
 
+HanyuPinyinCaseType* HanyuPinyinCaseType::UPPERCASE=new HanyuPinyinCaseType(HAN_YU_PIN_YIN_CASE_TYPE_UPPERCASE);
+HanyuPinyinCaseType* HanyuPinyinCaseType::LOWERCASE=new HanyuPinyinCaseType(HAN_YU_PIN_YIN_CASE_TYPE_LOWERCASE);
+
 HanyuPinyinCaseType::HanyuPinyinCaseType()
 {
     this->setName(HAN_YU_PIN_YIN_CASE_TYPE_LOWERCASE);

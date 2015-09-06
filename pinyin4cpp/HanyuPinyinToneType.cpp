@@ -16,6 +16,10 @@
 
 #include "HanyuPinyinToneType.h"
 
+HanyuPinyinToneType* HanyuPinyinToneType::WITH_TONE_NUMBER=new HanyuPinyinToneType(HAN_YU_PIN_YIN_TONE_TYPE_WITH_TONE_NUMBER);
+HanyuPinyinToneType* HanyuPinyinToneType::WITHOUT_TONE=new HanyuPinyinToneType(HAN_YU_PIN_YIN_TONE_TYPE_WITHOUT_TONE);
+HanyuPinyinToneType* HanyuPinyinToneType::WITH_TONE_MARK=new HanyuPinyinToneType(HAN_YU_PIN_YIN_TONE_TYPE_WITH_TONE_MARK);
+
 HanyuPinyinToneType::HanyuPinyinToneType()
 {
     this->setName(HAN_YU_PIN_YIN_TONE_TYPE_WITH_TONE_NUMBER);

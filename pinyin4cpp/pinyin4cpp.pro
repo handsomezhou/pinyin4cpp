@@ -11,16 +11,17 @@ TEMPLATE = lib
 
 DEFINES += PINYIN4CPP_LIBRARY
 
-SOURCES += pinyin4cpp.cpp \
+SOURCES += \
     HanyuPinyinOutputFormat.cpp \
     HanyuPinyinVCharType.cpp \
     HanyuPinyinCaseType.cpp \
     HanyuPinyinToneType.cpp \
     PinyinHelper.cpp \
     ChineseToPinyinResource.cpp \
-    ResourceHelper.cpp
+    ResourceHelper.cpp \
+    PinyinFormatter.cpp
 
-HEADERS += pinyin4cpp.h\
+HEADERS +=\
         pinyin4cpp_global.h \
     HanyuPinyinOutputFormat.h \
     HanyuPinyinVCharType.h \
@@ -28,7 +29,8 @@ HEADERS += pinyin4cpp.h\
     HanyuPinyinToneType.h \
     PinyinHelper.h \
     ChineseToPinyinResource.h \
-    ResourceHelper.h
+    ResourceHelper.h \
+    PinyinFormatter.h
 
 unix {
     target.path = /usr/lib

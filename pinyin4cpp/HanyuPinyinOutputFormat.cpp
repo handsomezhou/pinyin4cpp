@@ -16,16 +16,19 @@
 
 #include "HanyuPinyinOutputFormat.h"
 
-HanyuPinyinOutputFormat::HanyuPinyinOutputFormat():vCharType(),caseType(),toneType()
+HanyuPinyinOutputFormat::HanyuPinyinOutputFormat()//:vCharType(),caseType(),toneType()
 {
     this->restoreDefault();
 }
 
 void HanyuPinyinOutputFormat::restoreDefault()
 {
-   this->getVCharType().setName(HAN_YU_PIN_YIN_V_CHAR_TYPE_WITH_U_AND_COLON);
-   this->getCaseType().setName(HAN_YU_PIN_YIN_CASE_TYPE_LOWERCASE);
-   this->getToneType().setName(HAN_YU_PIN_YIN_TONE_TYPE_WITH_TONE_NUMBER);
+
+    this->setVCharType(*(HanyuPinyinVCharType::WITH_U_AND_COLON));
+
+    this->setCaseType(*(HanyuPinyinCaseType::LOWERCASE));
+
+    this->setToneType(*(HanyuPinyinToneType::WITH_TONE_NUMBER));
 }
 
 HanyuPinyinVCharType HanyuPinyinOutputFormat::getVCharType()

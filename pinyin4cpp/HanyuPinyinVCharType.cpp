@@ -16,7 +16,12 @@
 
 #include "HanyuPinyinVCharType.h"
 
+HanyuPinyinVCharType* HanyuPinyinVCharType::WITH_U_AND_COLON=new HanyuPinyinVCharType(HAN_YU_PIN_YIN_V_CHAR_TYPE_WITH_U_AND_COLON);
+HanyuPinyinVCharType* HanyuPinyinVCharType::WITH_U_UNICODE=new HanyuPinyinVCharType(HAN_YU_PIN_YIN_V_CHAR_TYPE_WITH_U_UNICODE);
+HanyuPinyinVCharType* HanyuPinyinVCharType::WITH_V=new HanyuPinyinVCharType(HAN_YU_PIN_YIN_V_CHAR_TYPE_WITH_V);
+
 HanyuPinyinVCharType::HanyuPinyinVCharType(){
+
     setName(HAN_YU_PIN_YIN_V_CHAR_TYPE_WITH_U_AND_COLON);
 }
 

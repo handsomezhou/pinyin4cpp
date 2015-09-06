@@ -60,14 +60,23 @@ void ChineseToPinyinResource::getHanyuPinyinStringArray(QChar ch, QList<QString>
     }
     QString pinyinRecord=this->getHanyuPinyinRecordFromChar(ch);
     qDebug()<<pinyinRecord;
-    QHashIterator<QString, QString> hanyuPinyinHashIterator(*(this->hanyuPinyinHash));
-
-    while(hanyuPinyinHashIterator.hasNext()){
-        hanyuPinyinHashIterator.next();
-        // qDebug(" File:%s, Line:%d, Function:%s  [%s][%s]", __FILE__, __LINE__ , __FUNCTION__, qPrintable(hanyuPinyinHashIterator.key()),qPrintable(hanyuPinyinHashIterator.value()));
-
+    if(NULL==pinyinRecord){
+        return;
     }
 
+    int indexOfLeftBracket=pinyinRecord.indexOf(LEFT_BRACKET);
+    int indexOfRightBracket = pinyinRecord.indexOf(RIGHT_BRACKET);
+    QString stripedString=pinyinRecord.mid(indexOfLeftBracket+LEFT_BRACKET.length(),indexOfRightBracket-(indexOfLeftBracket+LEFT_BRACKET.length()));
+    qDebug()<<stripedString;
+    QStringList pinyinStringList=stripedString.split(COMMA);
+
+    for(int i=0; i<pinyinStringList.length();i++){
+        pinyinList->insert(i,pinyinStringList.at(i));
+       // qDebug()<<pinyinList->at(i);
+    }
+
+   // qDebug()<<"yes";
+    return;
 }
 
 QString ChineseToPinyinResource::getHanyuPinyinRecordFromChar(QChar ch)
@@ -105,15 +114,11 @@ bool ChineseToPinyinResource::isValidRecord(QString record)
             break;
         }
 
-        /*
-        QString left="(";
-        QString right=")";
-
-        if(QString::startsWith(&record,&left)&&QString::endsWith(&record,&right)){
+        if(record.startsWith(LEFT_BRACKET)&&record.endsWith(RIGHT_BRACKET)){
             validRecord=true;
             break;
         }
-        */
+
     }while(false);
 
     return validRecord;

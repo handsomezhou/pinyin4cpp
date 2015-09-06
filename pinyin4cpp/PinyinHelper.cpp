@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#include <QDebug>
 #include "PinyinHelper.h"
 #include "ChineseToPinyinResource.h"
 
@@ -72,13 +73,18 @@ void  PinyinHelper::getFormattedHanyuPinyinStringArray(QChar ch, HanyuPinyinOutp
     }
 
     PinyinHelper::getUnformattedHanyuPinyinStringArray(ch,pinyinList);
-
     int pinyinListSize=pinyinList->size();
-    if(pinyinListSize>0){
-        for(int i=0; i<pinyinListSize;i++){
-           // pinyinList->;
-        }
+    if(0==pinyinListSize){
+        return;
     }
+
+    for(int i=0; i<pinyinListSize;i++){
+        qDebug()<<pinyinListSize<<":"<<pinyinList->at(i);
+    }
+
+
+
+
 
 }
 

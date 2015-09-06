@@ -19,20 +19,22 @@
 #include<QString>
 
 /**
-* The option indicates that hanyu pinyin is outputted as uppercase letters
-*/
-  static const QString HAN_YU_PIN_YIN_CASE_TYPE_UPPERCASE = "UPPERCASE";
-
+ * The option indicates that hanyu pinyin is outputted as uppercase letters
+ */
+const QString HAN_YU_PIN_YIN_CASE_TYPE_UPPERCASE = "UPPERCASE";
 /**
-* The option indicates that hanyu pinyin is outputted as lowercase letters
-*/
-   static QString HAN_YU_PIN_YIN_CASE_TYPE_LOWERCASE = "LOWERCASE";
+ * The option indicates that hanyu pinyin is outputted as lowercase letters
+ */
+const QString HAN_YU_PIN_YIN_CASE_TYPE_LOWERCASE = "LOWERCASE";
 
 class HanyuPinyinCaseType{
 public:
     HanyuPinyinCaseType();
-    HanyuPinyinCaseType(QString name);
+    static HanyuPinyinCaseType *UPPERCASE;
+    static HanyuPinyinCaseType *LOWERCASE;
     QString getName();
+protected:
+    HanyuPinyinCaseType(QString name);
     void setName(QString name);
 private:
     QString name;
