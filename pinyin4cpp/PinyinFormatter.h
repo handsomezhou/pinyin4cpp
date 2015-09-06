@@ -5,7 +5,7 @@
 
 class PinyinFormatter{
 public:
-    static QString formatHanyuPinyin(QString pinyinStr,HanyuPinyinOutputFormat outputFormat);
+    static QString formatHanyuPinyin(QString pinyinStr,HanyuPinyinOutputFormat *outputFormat);
 private:
 
 };

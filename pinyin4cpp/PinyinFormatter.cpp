@@ -1,10 +1,14 @@
 #include <QString>
+#include <QRegExp>
 #include "PinyinFormatter.h"
 #include "HanyuPinyinOutputFormat.h"
 #include "HanyuPinyinToneType.h"
 
-QString PinyinFormatter::formatHanyuPinyin(QString pinyinStr, HanyuPinyinOutputFormat outputFormat)
+QString PinyinFormatter::formatHanyuPinyin(QString pinyinStr, HanyuPinyinOutputFormat *outputFormat)
 {
+    QString pattern("[1-5]");
+    QRegExp rx(pattern);
+    return pinyinStr.replace(rx,"");
 //    if((NULL==pinyinStr)||NULL==outputFormat){
 //        return pinyinStr;
 //    }
@@ -38,6 +42,6 @@ QString PinyinFormatter::formatHanyuPinyin(QString pinyinStr, HanyuPinyinOutputF
         pinyinStr = pinyinStr.toUpperCase();
     }
     */
-    return pinyinStr;
+    //return pinyinStr;
 
 }

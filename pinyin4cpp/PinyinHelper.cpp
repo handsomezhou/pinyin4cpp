@@ -17,6 +17,7 @@
 #include <QDebug>
 #include "PinyinHelper.h"
 #include "ChineseToPinyinResource.h"
+#include "PinyinFormatter.h"
 
 PinyinHelper::PinyinHelper()
 {
@@ -80,11 +81,14 @@ void  PinyinHelper::getFormattedHanyuPinyinStringArray(QChar ch, HanyuPinyinOutp
 
     for(int i=0; i<pinyinListSize;i++){
         qDebug()<<pinyinListSize<<":"<<pinyinList->at(i);
+
+        pinyinList->replace(i,PinyinFormatter::formatHanyuPinyin(pinyinList->at(i),outputFormat));
+
     }
 
-
-
-
+    for(int i=0; i<pinyinListSize;i++){
+        qDebug()<<pinyinListSize<<"::"<<pinyinList->at(i);
+    }
 
 }
 
