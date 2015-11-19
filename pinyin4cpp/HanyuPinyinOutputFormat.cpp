@@ -24,39 +24,42 @@ HanyuPinyinOutputFormat::HanyuPinyinOutputFormat()//:vCharType(),caseType(),tone
 void HanyuPinyinOutputFormat::restoreDefault()
 {
 
-    this->setVCharType(*(HanyuPinyinVCharType::WITH_U_AND_COLON));
+    this->setVCharType((HanyuPinyinVCharType::WITH_U_AND_COLON));
 
-    this->setCaseType(*(HanyuPinyinCaseType::LOWERCASE));
+    this->setCaseType((HanyuPinyinCaseType::LOWERCASE));
 
-    this->setToneType(*(HanyuPinyinToneType::WITH_TONE_NUMBER));
+    this->setToneType(HanyuPinyinToneType::WITH_TONE_NUMBER);
 }
 
-HanyuPinyinVCharType HanyuPinyinOutputFormat::getVCharType()
+HanyuPinyinVCharType *HanyuPinyinOutputFormat::getVCharType() const
 {
     return this->vCharType;
 }
 
-void HanyuPinyinOutputFormat::setVCharType(HanyuPinyinVCharType charType)
+void HanyuPinyinOutputFormat::setVCharType(HanyuPinyinVCharType *vCharType)
 {
-    this->vCharType=charType;
+    this->vCharType = vCharType;
 }
-
-HanyuPinyinCaseType HanyuPinyinOutputFormat::getCaseType()
+HanyuPinyinCaseType *HanyuPinyinOutputFormat::getCaseType() const
 {
     return this->caseType;
 }
 
-void HanyuPinyinOutputFormat::setCaseType(HanyuPinyinCaseType caseType)
+void HanyuPinyinOutputFormat::setCaseType(HanyuPinyinCaseType *caseType)
 {
-    this->caseType=caseType;
+    this->caseType = caseType;
 }
 
-HanyuPinyinToneType HanyuPinyinOutputFormat::getToneType()
+HanyuPinyinToneType *HanyuPinyinOutputFormat::getToneType() const
 {
     return this->toneType;
 }
 
-void HanyuPinyinOutputFormat::setToneType(HanyuPinyinToneType toneType)
+void HanyuPinyinOutputFormat::setToneType(HanyuPinyinToneType *toneType)
 {
-    this->toneType=toneType;
+    this->toneType = toneType;
 }
+
+
+
+

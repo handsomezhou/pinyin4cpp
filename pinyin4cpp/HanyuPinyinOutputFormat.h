@@ -25,16 +25,21 @@ class PINYIN4CPPSHARED_EXPORT HanyuPinyinOutputFormat{
 public:
     HanyuPinyinOutputFormat();
     void restoreDefault();
-    HanyuPinyinVCharType getVCharType();
-    void setVCharType(HanyuPinyinVCharType charType);
-    HanyuPinyinCaseType getCaseType();
-    void setCaseType(HanyuPinyinCaseType caseType);
-    HanyuPinyinToneType getToneType();
-    void  setToneType(HanyuPinyinToneType toneType);
+
+
+    HanyuPinyinVCharType *getVCharType() const;
+    void setVCharType(HanyuPinyinVCharType *vCharType);
+
+    HanyuPinyinCaseType *getCaseType() const;
+    void setCaseType(HanyuPinyinCaseType *caseType);
+
+    HanyuPinyinToneType *getToneType() const;
+    void setToneType(HanyuPinyinToneType *toneType);
+
 private:
-    HanyuPinyinVCharType vCharType;
-    HanyuPinyinCaseType caseType;
-    HanyuPinyinToneType toneType;
+    HanyuPinyinVCharType *vCharType;
+    HanyuPinyinCaseType *caseType;
+    HanyuPinyinToneType *toneType;
 
 };
 
