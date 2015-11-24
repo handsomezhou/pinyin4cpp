@@ -17,6 +17,7 @@
 #ifndef HANYUPINYINVCHARTYPE_H
 #define HANYUPINYINVCHARTYPE_H
 #include <QString>
+#include "pinyin4cpp_global.h"
 
 
 /**
@@ -32,7 +33,7 @@ const QString  HAN_YU_PIN_YIN_V_CHAR_TYPE_WITH_V="WITH_V";
  */
 const QString  HAN_YU_PIN_YIN_V_CHAR_TYPE_WITH_U_UNICODE="WITH_U_UNICODE";
 
-class HanyuPinyinVCharType{
+class PINYIN4CPPSHARED_EXPORT HanyuPinyinVCharType{
 public:
     HanyuPinyinVCharType();
     HanyuPinyinVCharType(QString name);

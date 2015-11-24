@@ -17,6 +17,7 @@
 #ifndef HANYUPINYINCASETYPE_H
 #define HANYUPINYINCASETYPE_H
 #include<QString>
+#include "pinyin4cpp_global.h"
 
 /**
  * The option indicates that hanyu pinyin is outputted as uppercase letters
@@ -27,7 +28,7 @@ const QString HAN_YU_PIN_YIN_CASE_TYPE_UPPERCASE = "UPPERCASE";
  */
 const QString HAN_YU_PIN_YIN_CASE_TYPE_LOWERCASE = "LOWERCASE";
 
-class HanyuPinyinCaseType{
+class PINYIN4CPPSHARED_EXPORT HanyuPinyinCaseType{
 public:
     HanyuPinyinCaseType();
     static HanyuPinyinCaseType *UPPERCASE;

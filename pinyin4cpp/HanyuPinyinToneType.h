@@ -17,7 +17,7 @@
 #ifndef HANYUPINYINTONETYPE_H
 #define HANYUPINYINTONETYPE_H
 #include <QString>
-
+#include "pinyin4cpp_global.h"
 /**
  * The option indicates that hanyu pinyin is outputted with tone numbers
  */
@@ -32,7 +32,7 @@ const QString HAN_YU_PIN_YIN_TONE_TYPE_WITHOUT_TONE = "WITHOUT_TONE";
  */
 const QString HAN_YU_PIN_YIN_TONE_TYPE_WITH_TONE_MARK ="WITH_TONE_MARK";
 
-class HanyuPinyinToneType{
+class PINYIN4CPPSHARED_EXPORT HanyuPinyinToneType{
 public:
 
     HanyuPinyinToneType();
