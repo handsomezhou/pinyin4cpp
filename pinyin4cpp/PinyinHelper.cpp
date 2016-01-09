@@ -87,7 +87,7 @@ void  PinyinHelper::getFormattedHanyuPinyinStringArray(QChar ch, HanyuPinyinOutp
     }
 
     for(int i=0; i<pinyinListSize;i++){
-        qDebug()<<pinyinListSize<<"::"<<pinyinList->at(i);
+        qDebug()<<pinyinListSize<<":::"<<pinyinList->at(i);
     }
 
 }
