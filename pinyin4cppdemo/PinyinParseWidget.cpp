@@ -28,14 +28,19 @@ void PinyinParseWidget::pinyinParse()
 {
     QString inputString=inputStringEt->toPlainText();
     if(!inputString.isEmpty()){
-        converBtn->setText(inputString.at(0));
+
         QChar ch=inputString.at(0);
 
-        qDebug()<<"["<<ch.unicode()<<"]";
+       // qDebug()<<"["<<ch.unicode()<<"]";
         HanyuPinyinOutputFormat *outputFormat=new HanyuPinyinOutputFormat();
         QList<QString> *pinyinList=new QList<QString>();
         //PinyinHelper::toHanyuPinyinStringArray(ch,outputFormat,pinyinList);
         PinyinHelper::toHanyuPinyinStringArray(ch,outputFormat,pinyinList);
+        QString pinyins;
+        for(int k=0; k<pinyinList->size();k++){
+            pinyins=pinyins+" "+pinyinList->at(k);
+        }
+       converBtn->setText(pinyins);
     }
 
     //PinyinHelper::toHanyuPinyinStringArray(inputString.at(0));
