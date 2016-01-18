@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <QDebug>
+//#include <QDebug>
 #include "ChineseToPinyinResource.h"
 #include "ResourceHelper.h"
 
@@ -59,7 +59,7 @@ void ChineseToPinyinResource::getHanyuPinyinStringArray(QChar ch, QList<QString>
         return;
     }
     QString pinyinRecord=this->getHanyuPinyinRecordFromChar(ch);
-    qDebug()<<pinyinRecord;
+    ////qDebug()<<pinyinRecord;
     if(NULL==pinyinRecord){
         return;
     }
@@ -67,15 +67,15 @@ void ChineseToPinyinResource::getHanyuPinyinStringArray(QChar ch, QList<QString>
     int indexOfLeftBracket=pinyinRecord.indexOf(LEFT_BRACKET);
     int indexOfRightBracket = pinyinRecord.indexOf(RIGHT_BRACKET);
     QString stripedString=pinyinRecord.mid(indexOfLeftBracket+LEFT_BRACKET.length(),indexOfRightBracket-(indexOfLeftBracket+LEFT_BRACKET.length()));
-    qDebug()<<stripedString;
+   // //qDebug()<<stripedString;
     QStringList pinyinStringList=stripedString.split(COMMA);
 
     for(int i=0; i<pinyinStringList.length();i++){
         pinyinList->insert(i,pinyinStringList.at(i));
-       // qDebug()<<pinyinList->at(i);
+       // //qDebug()<<pinyinList->at(i);
     }
 
-   // qDebug()<<"yes";
+   // //qDebug()<<"yes";
     return;
 }
 
@@ -85,12 +85,12 @@ QString ChineseToPinyinResource::getHanyuPinyinRecordFromChar(QChar ch)
     // please refer to http://www.unicode.org/glossary/#code_point
     // Another reference: http://en.wikipedia.org/wiki/Unicode
 
-    qDebug()<<ch.unicode();
+    //qDebug()<<ch.unicode();
     QString codePointHexStr;
     QString codePointHexUpperStr=codePointHexStr.setNum(ch.unicode(),16).toUpper();
     QString foundRecord=this->hanyuPinyinHash->value(codePointHexUpperStr,NULL);
-    qDebug()<<codePointHexUpperStr;
-    qDebug()<<foundRecord;
+    //qDebug()<<codePointHexUpperStr;
+    //qDebug()<<foundRecord;
 
     return (this->isValidRecord(foundRecord))?(foundRecord):(NULL);
 }

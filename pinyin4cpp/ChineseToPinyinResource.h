@@ -18,6 +18,7 @@
 #define CHINESETOPINYINRESOURCE_H
 #include <QChar>
 #include <QString> //NULL
+#include <QStringList>
 #include <QHashIterator>
 
 static QString TEXT_FILE_RESOURCE_PATH = ":/pinyin4cpp/res/text_file/unicode_to_hanyu_pinyin.txt";

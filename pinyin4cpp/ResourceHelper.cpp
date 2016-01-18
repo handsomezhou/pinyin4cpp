@@ -16,7 +16,7 @@
 
 #include <QTextStream>
 #include <QStringList>
-#include <QDebug>
+//#include <QDebug>
 #include "ResourceHelper.h"
 
 QHash<QString, QString> *ResourceHelper::loadProperties(QString resourcePath)
@@ -29,7 +29,7 @@ QHash<QString, QString> *ResourceHelper::loadProperties(QString resourcePath)
     QFile *pFile=new QFile(resourcePath);
     //qDebug(" File:%s, Line:%d, Function:%s,resourcePath[%s]", __FILE__, __LINE__ , __FUNCTION__,qPrintable(resourcePath));
     if(!pFile->open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug(" File:%s, Line:%d, Function:%s, open file failed", __FILE__, __LINE__ , __FUNCTION__);
+        //qDebug(" File:%s, Line:%d, Function:%s, open file failed", __FILE__, __LINE__ , __FUNCTION__);
         return hash;
     }
 
@@ -40,10 +40,10 @@ QHash<QString, QString> *ResourceHelper::loadProperties(QString resourcePath)
         QStringList stringList=line.split(QChar::Space);
         hash->insert( stringList.at(0), stringList.at(1));
 
-        // qDebug(" line:%s key[%s]-value[%s]",qPrintable(line),qPrintable(stringList.at(0)),qPrintable(stringList.at(1)));
+        // //qDebug(" line:%s key[%s]-value[%s]",qPrintable(line),qPrintable(stringList.at(0)),qPrintable(stringList.at(1)));
     }
 
-    qDebug(" File:%s, Line:%d, Function:%s  hash->size()[%d]", __FILE__, __LINE__ , __FUNCTION__, hash->size());
+    //qDebug(" File:%s, Line:%d, Function:%s  hash->size()[%d]", __FILE__, __LINE__ , __FUNCTION__, hash->size());
 
 
     return hash;
