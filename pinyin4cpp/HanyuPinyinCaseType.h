@@ -38,7 +38,7 @@ protected:
     HanyuPinyinCaseType(QString name);
     void setName(QString name);
 private:
-    QString name;
+    QString mName;
 };
 
 #endif // HANYUPINYINCASETYPE_H

@@ -31,10 +31,10 @@ HanyuPinyinCaseType::HanyuPinyinCaseType(QString name)
 
 QString HanyuPinyinCaseType::getName()
 {
-    return this->name;
+    return this->mName;
 }
 
 void HanyuPinyinCaseType::setName(QString name)
 {
-    this->name=name;
+    this->mName=name;
 }

@@ -44,7 +44,7 @@ public:
     QString getName();
     void setName(QString name);
 private:
-    QString name;
+    QString mName;
 };
 
 #endif // HANYUPINYINVCHARTYPE_H

@@ -31,10 +31,10 @@ HanyuPinyinVCharType::HanyuPinyinVCharType(QString name){
 
 QString HanyuPinyinVCharType::getName()
 {
-   return this->name;
+   return this->mName;
 }
 
 void HanyuPinyinVCharType::setName(QString name)
 {
-    this->name=name;
+    this->mName=name;
 }
